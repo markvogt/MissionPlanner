@@ -4017,5 +4017,13 @@ namespace MissionPlanner
                 }
             }
         }
+
+
+        private void MenuConfigureIoTLogging_Click(object sender, EventArgs e)
+        {
+            //MEV 20181014 START by displaying a message... 
+            // Later will show a screen - a view in this form... 
+            CustomMessageBox.Show("ON THIS CLICK a new ConfigureIoTLogging Screen displays...");
+        }
     }
 }

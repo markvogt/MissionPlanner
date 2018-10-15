@@ -54,6 +54,7 @@ namespace MissionPlanner
             this.MenuConnect = new System.Windows.Forms.ToolStripButton();
             this.toolStripConnectionControl = new MissionPlanner.Controls.ToolStripConnectionControl();
             this.MenuArduPilot = new System.Windows.Forms.ToolStripButton();
+            this.MenuConfigureIoTLogging = new System.Windows.Forms.ToolStripMenuItem();
             this.menu = new MissionPlanner.Controls.MyButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MainMenu.SuspendLayout();
@@ -79,7 +80,8 @@ namespace MissionPlanner
             this.MenuDonate,
             this.MenuConnect,
             this.toolStripConnectionControl,
-            this.MenuArduPilot});
+            this.MenuArduPilot,
+            this.MenuConfigureIoTLogging});
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.ShowItemToolTips = true;
             this.MainMenu.Stretch = false;
@@ -236,11 +238,19 @@ namespace MissionPlanner
             this.MenuArduPilot.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.MenuArduPilot.Click += new System.EventHandler(this.MenuArduPilot_Click);
             // 
+            // MenuConfigureIoTLogging
+            // 
+            resources.ApplyResources(this.MenuConfigureIoTLogging, "MenuConfigureIoTLogging");
+            this.MenuConfigureIoTLogging.ForeColor = System.Drawing.Color.White;
+            this.MenuConfigureIoTLogging.Name = "MenuConfigureIoTLogging";
+            this.MenuConfigureIoTLogging.Click += new System.EventHandler(this.MenuConfigureIoTLogging_Click);
+            // 
             // menu
             // 
             resources.ApplyResources(this.menu, "menu");
             this.menu.Name = "menu";
             this.menu.UseVisualStyleBackColor = true;
+            this.menu.Click += new System.EventHandler(this.menu_Click);
             this.menu.MouseEnter += new System.EventHandler(this.menu_MouseEnter);
             // 
             // panel1
@@ -271,6 +281,11 @@ namespace MissionPlanner
 
         }
 
+        private void menu_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         public System.Windows.Forms.ToolStripButton MenuFlightData;
@@ -294,5 +309,6 @@ namespace MissionPlanner
         private System.Windows.Forms.ToolStripMenuItem connectionOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton MenuArduPilot;
         private System.Windows.Forms.ToolStripMenuItem connectionListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuConfigureIoTLogging;
     }
 }

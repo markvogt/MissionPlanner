@@ -4023,7 +4023,13 @@ namespace MissionPlanner
         {
             //MEV 20181014 START by displaying a message... 
             // Later will show a screen - a view in this form... 
-            CustomMessageBox.Show("ON THIS CLICK a new ConfigureIoTLogging Screen displays...");
+            //CustomMessageBox.Show("ON THIS CLICK a new ConfigureIoTLogging Screen displays...");
+
+            //INSTANTIATE a new instance of frmConfigIoTLogging...
+            frmConfigIoTLogging myfrmConfigIoTLogging = new frmConfigIoTLogging();
+            //DISPLAY the FORM  frmConfigIoTLogging ... 
+            myfrmConfigIoTLogging.Show();
+
         }
     }
 }

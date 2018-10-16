@@ -696,6 +696,93 @@
   <data name="MenuArduPilot.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>Overlay</value>
   </data>
+  <data name="MenuConfigureIoTLogging.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 6pt</value>
+  </data>
+  <data name="MenuConfigureIoTLogging.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        rkJggg==
+</value>
+  </data>
+  <data name="MenuConfigureIoTLogging.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="MenuConfigureIoTLogging.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 60</value>
+  </data>
+  <data name="MenuConfigureIoTLogging.Text" xml:space="preserve">
+    <value>CONFIGURE IoT</value>
+  </data>
+  <data name="MenuConfigureIoTLogging.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="MenuConfigureIoTLogging.ToolTipText" xml:space="preserve">
+    <value>Configure Logging to Azure IoT Hub...</value>
+  </data>
   <data name="MainMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -745,7 +832,7 @@
     <value>menu</value>
   </data>
   <data name="&gt;&gt;menu.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;menu.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2539,13 +2626,19 @@
     <value>toolStripConnectionControl</value>
   </data>
   <data name="&gt;&gt;toolStripConnectionControl.Type" xml:space="preserve">
-    <value>MissionPlanner.Controls.ToolStripConnectionControl, MissionPlanner, Version=1.3.52.10, Culture=neutral, PublicKeyToken=null</value>
+    <value>MissionPlanner.Controls.ToolStripConnectionControl, MissionPlanner, Version=1.3.57.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;MenuArduPilot.Name" xml:space="preserve">
     <value>MenuArduPilot</value>
   </data>
   <data name="&gt;&gt;MenuArduPilot.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuConfigureIoTLogging.Name" xml:space="preserve">
+    <value>MenuConfigureIoTLogging</value>
+  </data>
+  <data name="&gt;&gt;MenuConfigureIoTLogging.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainV2</value>

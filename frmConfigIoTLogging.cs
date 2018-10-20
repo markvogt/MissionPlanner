@@ -51,7 +51,7 @@ namespace MissionPlanner
             oDeviceClient.OpenAsync();
 
             //LOG successful connection to console... 
-            txtLoggingConsole.AppendText("Device successfully connected ! ...");
+            txtLoggingConsole.AppendText("Device successfully connected ! ...\r\n");
         }
 
         private async void BtnStartMessaging_ClickAsync(object sender, EventArgs e)

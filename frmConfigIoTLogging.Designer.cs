@@ -42,6 +42,12 @@
             this.lblAzureIoTSettings = new System.Windows.Forms.Label();
             this.txtLoggingConsole = new System.Windows.Forms.TextBox();
             this.lblLoggingConsole = new System.Windows.Forms.Label();
+            this.btnStartReadingMPLog = new System.Windows.Forms.Button();
+            this.btnStopReadingMPLog = new System.Windows.Forms.Button();
+            this.lblMPLogFullFileName = new System.Windows.Forms.Label();
+            this.txtMPLogFullFileName = new System.Windows.Forms.TextBox();
+            this.btnPickMPLogFile = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // lblInstructions
@@ -73,7 +79,7 @@
             this.txtAzureIoTHubURL.Location = new System.Drawing.Point(209, 182);
             this.txtAzureIoTHubURL.Name = "txtAzureIoTHubURL";
             this.txtAzureIoTHubURL.ReadOnly = true;
-            this.txtAzureIoTHubURL.Size = new System.Drawing.Size(316, 20);
+            this.txtAzureIoTHubURL.Size = new System.Drawing.Size(210, 20);
             this.txtAzureIoTHubURL.TabIndex = 2;
             // 
             // lblAzureIoTConnectionString
@@ -127,9 +133,9 @@
             // 
             // btnSaveConnectionSettings
             // 
-            this.btnSaveConnectionSettings.Location = new System.Drawing.Point(413, 221);
+            this.btnSaveConnectionSettings.Location = new System.Drawing.Point(434, 175);
             this.btnSaveConnectionSettings.Name = "btnSaveConnectionSettings";
-            this.btnSaveConnectionSettings.Size = new System.Drawing.Size(112, 32);
+            this.btnSaveConnectionSettings.Size = new System.Drawing.Size(88, 32);
             this.btnSaveConnectionSettings.TabIndex = 10;
             this.btnSaveConnectionSettings.Text = "Save Settings";
             this.btnSaveConnectionSettings.UseVisualStyleBackColor = true;
@@ -183,11 +189,67 @@
             this.lblLoggingConsole.TabIndex = 15;
             this.lblLoggingConsole.Text = "IOT LOGGING CONSOLE";
             // 
+            // btnStartReadingMPLog
+            // 
+            this.btnStartReadingMPLog.Location = new System.Drawing.Point(318, 277);
+            this.btnStartReadingMPLog.Name = "btnStartReadingMPLog";
+            this.btnStartReadingMPLog.Size = new System.Drawing.Size(112, 32);
+            this.btnStartReadingMPLog.TabIndex = 16;
+            this.btnStartReadingMPLog.Text = "Start Reading Log";
+            this.btnStartReadingMPLog.UseVisualStyleBackColor = true;
+            this.btnStartReadingMPLog.Click += new System.EventHandler(this.btnStartReadingMPLog_Click);
+            // 
+            // btnStopReadingMPLog
+            // 
+            this.btnStopReadingMPLog.Location = new System.Drawing.Point(436, 277);
+            this.btnStopReadingMPLog.Name = "btnStopReadingMPLog";
+            this.btnStopReadingMPLog.Size = new System.Drawing.Size(112, 32);
+            this.btnStopReadingMPLog.TabIndex = 17;
+            this.btnStopReadingMPLog.Text = "Stop Reading Log";
+            this.btnStopReadingMPLog.UseVisualStyleBackColor = true;
+            this.btnStopReadingMPLog.Click += new System.EventHandler(this.btnStopReadingMPLog_Click);
+            // 
+            // lblMPLogFullFileName
+            // 
+            this.lblMPLogFullFileName.AutoSize = true;
+            this.lblMPLogFullFileName.Location = new System.Drawing.Point(37, 228);
+            this.lblMPLogFullFileName.Name = "lblMPLogFullFileName";
+            this.lblMPLogFullFileName.Size = new System.Drawing.Size(107, 13);
+            this.lblMPLogFullFileName.TabIndex = 18;
+            this.lblMPLogFullFileName.Text = "MP Log FullFileName";
+            // 
+            // txtMPLogFullFileName
+            // 
+            this.txtMPLogFullFileName.Location = new System.Drawing.Point(34, 247);
+            this.txtMPLogFullFileName.Name = "txtMPLogFullFileName";
+            this.txtMPLogFullFileName.Size = new System.Drawing.Size(471, 20);
+            this.txtMPLogFullFileName.TabIndex = 19;
+            this.txtMPLogFullFileName.Text = "MP Log Full FileName";
+            // 
+            // btnPickMPLogFile
+            // 
+            this.btnPickMPLogFile.Location = new System.Drawing.Point(511, 239);
+            this.btnPickMPLogFile.Name = "btnPickMPLogFile";
+            this.btnPickMPLogFile.Size = new System.Drawing.Size(37, 32);
+            this.btnPickMPLogFile.TabIndex = 20;
+            this.btnPickMPLogFile.Text = "...";
+            this.btnPickMPLogFile.UseVisualStyleBackColor = true;
+            this.btnPickMPLogFile.Click += new System.EventHandler(this.btnPickMPLogFile_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frmConfigIoTLogging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 450);
+            this.Controls.Add(this.btnPickMPLogFile);
+            this.Controls.Add(this.txtMPLogFullFileName);
+            this.Controls.Add(this.lblMPLogFullFileName);
+            this.Controls.Add(this.btnStopReadingMPLog);
+            this.Controls.Add(this.btnStartReadingMPLog);
             this.Controls.Add(this.lblLoggingConsole);
             this.Controls.Add(this.txtLoggingConsole);
             this.Controls.Add(this.lblAzureIoTSettings);
@@ -226,5 +288,11 @@
         private System.Windows.Forms.Label lblAzureIoTSettings;
         private System.Windows.Forms.TextBox txtLoggingConsole;
         private System.Windows.Forms.Label lblLoggingConsole;
+        private System.Windows.Forms.Button btnStartReadingMPLog;
+        private System.Windows.Forms.Button btnStopReadingMPLog;
+        private System.Windows.Forms.Label lblMPLogFullFileName;
+        private System.Windows.Forms.TextBox txtMPLogFullFileName;
+        private System.Windows.Forms.Button btnPickMPLogFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

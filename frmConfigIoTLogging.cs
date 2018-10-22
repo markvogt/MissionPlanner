@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -25,6 +26,9 @@ namespace MissionPlanner
 
         //DECLARE & INITIALIZE a publicly-scope flag for multiple form buttons to control stopping & starting a messaging loop...
         public Boolean bContinueMessagingFlag = false;
+
+        //DECLARE a publicly-scoped string representing the TopLine of the MP Log file (assuming file is appended at the top)...
+        public String strTopLine; 
 
         public frmConfigIoTLogging()
         {
@@ -72,16 +76,20 @@ namespace MissionPlanner
             {
                 var currentcount = count++;
 
-                //INSTANTIATE a new message using the Message class... 
-                var oMessage = new Message( Encoding.ASCII.GetBytes("This is message #" + currentcount + " from device-01 inside MissionPlanner...") );
+                //CREATE a new message string composed of static text and the current top line of the MP Log file... 
+                //var strMessage = "This is Message #" + currentcount + " from device-01 inside MissionPlanner...";
+                var strMessage = "Current Line from MP Log: " + strTopLine + "\r\n"; 
+
+                //INSTANTIATE a new message using the Message class..
+                var oMessage = new Message( Encoding.ASCII.GetBytes(strMessage) );
 
                 //SEND the message to AzureIoTHub asynchronously and wait for re response... 
                 await oDeviceClient.SendEventAsync(oMessage);
 
                 //LOG current status to the txtLoggingConsole control...
-                txtLoggingConsole.AppendText("oMessage" + currentcount + " sent to AzureIoTHub in the cloud...\r\n");
+                txtLoggingConsole.AppendText(strMessage + "\r\n");
 
-                //SLEEP for some time... 
+                //PAUSE for some time... 
                 Thread.Sleep(2000);
             }
 
@@ -101,6 +109,33 @@ namespace MissionPlanner
         {
             //UPDATE the value of the DeviceConnectionString text box so we know what device is being connected-to in AzureIoTHub...
             txtAzureIoTHubURL.Text = strDeviceConnectionString;
+        }
+
+        private void btnStartReadingMPLog_Click(object sender, EventArgs e)
+        {
+            //DEFINE & INITIALIZE a variable to hold the path & filename to the MP log file...
+            String strFullFileName = txtMPLogFullFileName.Text;
+
+            //INSTANTIATE a Stream (file) object pointed at the MP log...
+            StreamReader sr = new StreamReader(strFullFileName);
+
+            //READ only the top (first) line of the file and assign it to the public variable strTopLine... 
+            //The existing messaging loop will now use THIS value to post to AzureIoTHub and to the form's Logging textbox...
+            strTopLine = sr.ReadLine();
+        }
+
+        private void btnStopReadingMPLog_Click(object sender, EventArgs e)
+        {
+            //STOP reading the MP log... 
+        }
+
+        private void btnPickMPLogFile_Click(object sender, EventArgs e)
+        {
+            //OPEN the OpenFileDialog dialog... 
+            openFileDialog1.ShowDialog();
+
+            //ASSIGN the value of the txtbox to the selected value from the dialog... 
+            txtMPLogFullFileName.Text = openFileDialog1.FileName;
         }
     }
 }
